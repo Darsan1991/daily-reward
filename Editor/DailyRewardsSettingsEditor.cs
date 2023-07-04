@@ -2,12 +2,12 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace DGames.DailyRewards
+namespace DGames.DailyRewards.Editor
 {
     
         [CustomEditor(typeof(DailyRewardSettings))]
 
-    public class DailyRewardSettingsEditor : Editor
+    public class DailyRewardSettingsEditor : UnityEditor.Editor
     {
 
         public const string SYMBOL = "DAILY_REWARD";
