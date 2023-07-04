@@ -10,7 +10,7 @@ namespace DGames.DailyRewards
     public class DailyRewardManager:Singleton<DailyRewardManager>
     {
 
-        [SerializeField] private Value<int> _coins;
+        [SerializeField] private ValueField<int> _coinsField = new("COINS");
 #if DAILY_REWARD
 
         private static DateTime LastRewardTime
@@ -53,7 +53,7 @@ namespace DGames.DailyRewards
             if (!HasPendingDailyReward)
                 return false;
 
-            Instance._coins.Set(PendingRewardValue * multiplexer);
+            Instance._coinsField.Value.Set(PendingRewardValue * multiplexer);
             PendingRewardValue = -1;
             LastRewardTime = DateTime.Now;
             return true;
