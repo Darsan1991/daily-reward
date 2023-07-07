@@ -53,7 +53,7 @@ namespace DGames.DailyRewards
             if (!HasPendingDailyReward)
                 return false;
 
-            Instance._coinsField.Value.Set(PendingRewardValue * multiplexer);
+            Instance._coinsField.Item.Set(PendingRewardValue * multiplexer);
             PendingRewardValue = -1;
             LastRewardTime = DateTime.Now;
             return true;

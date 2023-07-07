@@ -77,7 +77,8 @@ namespace DGames.DailyRewards.Editor
         }
     }
     
-     public static class ScriptingDefineSymbolHandler
+    // ReSharper disable once HollowTypeName
+    public static class ScriptingDefineSymbolHandler
     {
         public static bool HaveBuildSymbol(BuildTargetGroup group, string symbol)
         {
@@ -87,6 +88,7 @@ namespace DGames.DailyRewards.Editor
             return strings.Contains(symbol);
         }
 
+        // ReSharper disable once FlagArgument
         public static void AddBuildSymbol(BuildTargetGroup group, string symbol)
         {
             if (HaveBuildSymbol(group, symbol))
@@ -103,6 +105,7 @@ namespace DGames.DailyRewards.Editor
             PlayerSettings.SetScriptingDefineSymbolsForGroup(group, str);
         }
 
+        // ReSharper disable once FlagArgument
         public static void RemoveBuildSymbol(BuildTargetGroup group, string symbol)
         {
             if (!HaveBuildSymbol(group, symbol))
@@ -119,6 +122,7 @@ namespace DGames.DailyRewards.Editor
             PlayerSettings.SetScriptingDefineSymbolsForGroup(group, str);
         }
 
+        // ReSharper disable once FlagArgument
         public static void HandleScriptingSymbol(BuildTargetGroup buildTargetGroup, bool enable, string key)
         {
             var scriptingDefineSymbolsForGroup = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
