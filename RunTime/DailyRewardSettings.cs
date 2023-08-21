@@ -1,8 +1,11 @@
 using System.Collections.Generic;
+using DGames.Essentials.Attributes;
+using DGames.Essentials.Unity;
 using UnityEngine;
 
 namespace DGames.DailyRewards
 {
+    [DashboardResourceItem(path:"Settings")]
     public partial class DailyRewardSettings
     {
         public static DailyRewardSettings Default => Resources.Load<DailyRewardSettings>(nameof(DailyRewardSettings));
@@ -19,8 +22,8 @@ namespace DGames.DailyRewards
 
     public partial class DailyRewardSettings : ScriptableObject
     {
-        [SerializeField] private bool _active;
-        [SerializeField] private List<int> _rewards = new();
+        [ScriptableSymbolsToggle("","DAILY_REWARD",BuildTargetGroup.Android | BuildTargetGroup.iOS)][SerializeField] private bool _active;
+        [NoLabel][SerializeField] private List<int> _rewards = new();
 
         public bool Active => _active;
 

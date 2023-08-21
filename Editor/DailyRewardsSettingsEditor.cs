@@ -5,7 +5,7 @@ using UnityEngine;
 namespace DGames.DailyRewards.Editor
 {
     
-        [CustomEditor(typeof(DailyRewardSettings))]
+        // [CustomEditor(typeof(DailyRewardSettings))]
 
     public class DailyRewardSettingsEditor : UnityEditor.Editor
     {
